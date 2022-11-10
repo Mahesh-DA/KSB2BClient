@@ -6,7 +6,7 @@
 #include <winsock2.h>
 
 #define MSG_MAXLEN 600
-
+//just for test
 void handle_message(SOCKET hSockContral, char * szClientMsg, int nLen)
 {
 	int nReturn;
@@ -95,29 +95,29 @@ int main(int argc, char* argv[])
 	sprintf(szClientMsg, "%s", "R|||6012|||200889|1|20081010|");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 
-	//ÀúÊ·×´Ì¬×Ê½ğ²éÑ¯
+	//å†å²çŠ¶æ€èµ„é‡‘æŸ¥è¯¢
 	_snprintf(szClientMsg, sizeof(szClientMsg) - 1, "%s", "R|||6032|||200889|1|20081010|");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 
-	//³É½»Ã÷Ï¸²éÑ¯
+	//æˆäº¤æ˜ç»†æŸ¥è¯¢
 	_snprintf(szClientMsg, sizeof(szClientMsg) - 1, "%s", "R|||6053|||200889|1|20090202|20090209|||1|");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 	sprintf(szClientMsg, "%s", "R|||0|");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 
-	// ÏÂµ¥
+	// ä¸‹å•
 	sprintf(szClientMsg, "%s", "R|||6021|||40000003|1|B|a0907|0|0|0|10|1500|00000004|");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 
-	// ²éÑ¯Î¯ÍĞ×´Ì¬
+	// æŸ¥è¯¢å§”æ‰˜çŠ¶æ€
 	sprintf(szClientMsg, "%s", "R|||6020|||200889|1|60||");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 
-	// ³·µ¥
+	// æ’¤å•
 	sprintf(szClientMsg, "%s", "R|||6022|||200889|1||||||||60|10||sfe|");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 
-	// ²é×Ê½ğ
+	// æŸ¥èµ„é‡‘
 	sprintf(szClientMsg, "%s", "R|||6012|||200889|1||");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 
@@ -137,20 +137,20 @@ int main(int argc, char* argv[])
 	sprintf(szClientMsg, "%s", "R|||0|");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 
-	//6015²é½»Ò×Í³¼Æ ²éÑ¯³ö´í
+	//6015æŸ¥äº¤æ˜“ç»Ÿè®¡ æŸ¥è¯¢å‡ºé”™
 	sprintf(szClientMsg, "%s", "R|||6015|||200889|1|20081025|20081109|");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 	sprintf(szClientMsg, "%s", "R|||0|");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 
-	//6016³öÈë½ğ²éÑ¯
+	//6016å‡ºå…¥é‡‘æŸ¥è¯¢
 	sprintf(szClientMsg, "%s", "R|||6016|||200889|1|20081028|20081029|");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 	sprintf(szClientMsg, "%s", "R|||0|");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 
 	// qurey order(multi-records)
-	printf("\nÎ¯ÍĞµ¥²éÑ¯\n");
+	printf("\nå§”æ‰˜å•æŸ¥è¯¢\n");
 	//sprintf(szClientMsg, "%s", "R|||6019|||7963229|63229||||||");
 	sprintf(szClientMsg, "%s", "R|||6019|||200889|1||||||");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
@@ -199,96 +199,96 @@ int main(int argc, char* argv[])
 	sprintf(szClientMsg, "%s", "R|||6024|||200889|1|1|");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 
-	//6030 ¶ÁÏµÍ³ÈÕÆÚ
+	//6030 è¯»ç³»ç»Ÿæ—¥æœŸ
 	sprintf(szClientMsg, "%s", "R|||6030|||200889|1|");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 
-	//6031 ¶ÁÓªÒµ²¿Ãû³Æ
+	//6031 è¯»è¥ä¸šéƒ¨åç§°
 	sprintf(szClientMsg, "%s", "R|||6031|||200889|1|");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 
-	//6040 ²éÑ¯¿Í»§½»Ò×±àÂë
+	//6040 æŸ¥è¯¢å®¢æˆ·äº¤æ˜“ç¼–ç 
 	sprintf(szClientMsg, "%s", "R|||6040|||200889|1|A||");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 	sprintf(szClientMsg, "%s", "R|||0|");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 
-	//6041 ÒøÆÚ×ªÕËÃüÁî
+	//6041 é“¶æœŸè½¬è´¦å‘½ä»¤
 	sprintf(szClientMsg, "%s", "R|||6041|||200889|1|123456|10000|01|01|11111|");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 
-	//6044 ²éÑ¯×î´ó¿É¿ª²ÖÊÖÊı
+	//6044 æŸ¥è¯¢æœ€å¤§å¯å¼€ä»“æ‰‹æ•°
 	sprintf(szClientMsg, "%s", "R|||6044|||200889|1|al0811|A|120|0|0|");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 
-	//6068 ²éÑ¯×î´ó¿ÉÆ½²ÖÊÖÊı
+	//6068 æŸ¥è¯¢æœ€å¤§å¯å¹³ä»“æ‰‹æ•°
 	sprintf(szClientMsg, "%s", "R|||6068|||200889|1|al0901|A|0|0|sfe|");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 	sprintf(szClientMsg, "%s", "R|||0|");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 
-	//6045 ²éÑ¯¿Í»§ĞÅÏ¢
+	//6045 æŸ¥è¯¢å®¢æˆ·ä¿¡æ¯
 	sprintf(szClientMsg, "%s", "R|||6045|||200889|1|");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 	sprintf(szClientMsg, "%s", "R|||0|");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 
-	//6092 ½»¸îµ¥ĞÅÏ¢²éÑ¯
+	//6092 äº¤å‰²å•ä¿¡æ¯æŸ¥è¯¢
 	sprintf(szClientMsg, "%s", "R|||6092|||200889|1|20081027|20081029|");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 
-	//6025 ²éÑ¯×·±£Ç¿Æ½½áÊøÓï¾ä Ã»ÓĞÊµÏÖµÄ¹¦ÄÜ
+	//6025 æŸ¥è¯¢è¿½ä¿å¼ºå¹³ç»“æŸè¯­å¥ æ²¡æœ‰å®ç°çš„åŠŸèƒ½
 	sprintf(szClientMsg, "%s", "R|||6025|||200889|1|");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 
-	//6071 È·ÈÏ½áÕÊµ¥  drtp Ã»¿ª
+	//6071 ç¡®è®¤ç»“å¸å•  drtp æ²¡å¼€
 	sprintf(szClientMsg, "%s", "R|||6071|||200889|1|");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 
-	//6072 ÏÂÔØ½áÕÊµ¥  drtp Ã»¿ª
+	//6072 ä¸‹è½½ç»“å¸å•  drtp æ²¡å¼€
 	sprintf(szClientMsg, "%s", "R|||6072|||200889|1|1||");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 
-	/********************************×éºÏÎ¯ÍĞ²¿·Ö*****************************/
-	//ÏÂ×éºÏµ¥
+	/********************************ç»„åˆå§”æ‰˜éƒ¨åˆ†*****************************/
+	//ä¸‹ç»„åˆå•
 	sprintf(szClientMsg, "%s", "R|||6101|||40000003|1|00000004|B|dce|0|2|1|1|349|SP|0|0|0|0|0|0|a0905|a0909|||");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 
-	//×éºÏµ¥³·µ¥
+	//ç»„åˆå•æ’¤å•
 	sprintf(szClientMsg, "%s", "R|||6102|||40000003|1|dce|00000004|1000036|1|");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 
-	//²éÑ¯¶©µ¥ÀàĞÍ
+	//æŸ¥è¯¢è®¢å•ç±»å‹
 	sprintf(szClientMsg, "%s", "R|||6103|||200889|1||1|");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 	sprintf(szClientMsg, "%s", "R|||0|");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 
-	//²éÑ¯×éºÏ²ßÂÔ
+	//æŸ¥è¯¢ç»„åˆç­–ç•¥
 	sprintf(szClientMsg, "%s", "R|||6104|||200889||||||");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 	sprintf(szClientMsg, "%s", "R|||0|");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 
-	//²éÑ¯×éºÏºÏÔ¼
+	//æŸ¥è¯¢ç»„åˆåˆçº¦
 	sprintf(szClientMsg, "%s", "R|||6105|||200889|1||SP|");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 	sprintf(szClientMsg, "%s", "R|||0|");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 
-	//²éÑ¯×éºÏ³Ö²Ö
+	//æŸ¥è¯¢ç»„åˆæŒä»“
 	sprintf(szClientMsg, "%s", "R|||6106|||200889|1|200200889|||");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 	sprintf(szClientMsg, "%s", "R|||0|");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 
-	//×éºÏÎ¯ÍĞ²éÑ¯
+	//ç»„åˆå§”æ‰˜æŸ¥è¯¢
 	sprintf(szClientMsg, "%s", "R|||6107|||200889|1||||||");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 	sprintf(szClientMsg, "%s", "R|||0|");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 
-	//²éÑ¯×éºÏ¿É¿ª¿ÉÆ½ÊÖÊı
+	//æŸ¥è¯¢ç»„åˆå¯å¼€å¯å¹³æ‰‹æ•°
 	sprintf(szClientMsg, "%s", "R|||6108|||200889|1|200200889|B|dce|SPC|1|0|a0907|a0909|||0|");
 	handle_message(hSockContral, szClientMsg, strlen(szClientMsg));
 
